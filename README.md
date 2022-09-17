@@ -34,7 +34,8 @@ composer require afzalsabbir/slug-generator
         // ...
     }
     ```
-- Publish the config file to customize the slug generation.
+- Publish the config file to customize the slug generation. \
+  <sup>_[**Note:** if facing any issue run `php artisan vendor:publish` and find `AfzalSabbir\SlugGenerator\SlugGeneratorServiceProvider` to publish]_</sup>
     ```php
     php artisan vendor:publish --provider="AfzalSabbir\SlugGenerator\SlugGeneratorServiceProvider" --tag="config"
     ```
