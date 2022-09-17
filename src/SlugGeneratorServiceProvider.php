@@ -14,9 +14,10 @@ class SlugGeneratorServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/SlugGenerator.php', 'slug-generator');
+        $this->mergeConfigFrom(__DIR__ . '/../config/slug-generator.php', 'sluggenerator');
 
         $this->publishConfig();
+        //$this->publishTraits();
 
         // $this->loadViewsFrom(__DIR__.'/resources/views', 'slug-generator');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
@@ -36,10 +37,10 @@ class SlugGeneratorServiceProvider extends ServiceProvider
     }
 
     /**
-    * Get route group configuration array.
-    *
-    * @return array
-    */
+     * Get route group configuration array.
+     *
+     * @return array
+     */
     private function routeConfiguration()
     {
         return [
@@ -71,8 +72,21 @@ class SlugGeneratorServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/SlugGenerator.php' => config_path('SlugGenerator.php'),
+                __DIR__ . '/../config/slug-generator.php' => config_path('sluggenerator.php'),
             ], 'config');
+        }
+    }
+
+    /**
+     * Publish Trails
+     * @return void
+     */
+    public function publishTraits()
+    {
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/Traits/SlugGenerator.php' => app_path('Traits/SlugGenerator.php'),
+            ], 'traits');
         }
     }
 }
