@@ -1,8 +1,8 @@
 <?php
 
-namespace Afzalsabbir\SlugGenerator\Tests;
+namespace AfzalSabbir\SlugGenerator\Tests;
 
-use Afzalsabbir\SlugGenerator\SlugGeneratorServiceProvider;
+use AfzalSabbir\SlugGenerator\SlugGeneratorServiceProvider;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 
 class TestCase extends BaseTestCase

@@ -1,8 +1,8 @@
 <?php
 
-namespace Afzalsabbir\SlugGenerator\Tests\Feature;
+namespace AfzalSabbir\SlugGenerator\Tests\Feature;
 
-use Afzalsabbir\SlugGenerator\Tests\TestCase;
+use AfzalSabbir\SlugGenerator\Tests\TestCase;
 
 class ExampleTest extends TestCase
 {

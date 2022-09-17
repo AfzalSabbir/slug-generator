@@ -1,6 +1,6 @@
 <?php
 
-namespace Afzalsabbir\SlugGenerator;
+namespace AfzalSabbir\SlugGenerator;
 
 use Illuminate\Support\Facades\Facade;
 

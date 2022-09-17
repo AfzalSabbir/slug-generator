@@ -1,8 +1,8 @@
 <?php
 
-namespace Afzalsabbir\SlugGenerator\Tests\Unit;
+namespace AfzalSabbir\SlugGenerator\Tests\Unit;
 
-use Afzalsabbir\SlugGenerator\Tests\TestCase;
+use AfzalSabbir\SlugGenerator\Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ExampleTest extends TestCase

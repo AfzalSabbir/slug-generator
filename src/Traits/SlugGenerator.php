@@ -1,6 +1,6 @@
 <?php
 
-namespace Afzalsabbir\SlugGenerator\Traits;
+namespace AfzalSabbir\SlugGenerator\Traits;
 
 use Closure;
 use Illuminate\Database\Eloquent\Model;
