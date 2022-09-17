@@ -13,8 +13,20 @@ composer require afzalsabbir/slug-generator
 ## Usage
 
 - Using this package is very simple. Just use the `SlugGenerator` trait in your model and it'll automatically generate a
-  slug for you.
-- You can also use the `generateSlug(Model $model)` method to generate a slug.
+  slug for you. It'll use default configuration.
+    ```php
+    // ...
+    use AfzalSabbir\SlugGenerator\SlugGenerator;
+    use Illuminate\Database\Eloquent\Model;
+    // ...
+
+    class Post extends Model
+    {
+        // ...
+        use SlugGenerator;
+        // ...
+    }
+    ```
 - Publish the config file to customize the slug generation.
     ```php
     php artisan vendor:publish --provider="AfzalSabbir\SlugGenerator\SlugGeneratorServiceProvider" --tag="config"
@@ -33,7 +45,7 @@ composer require afzalsabbir/slug-generator
         use SlugGenerator;
     
         // ...
-        protected $slug = [
+        protected $slugGenerator = [
             "set-on-create" => true, // Whether to set the slug when the model is created
             "set-on-update" => false, // Whether to update the slug when the target field is updated
             "target-field"  => "title", // The field that will be used to generate the slug
@@ -44,9 +56,17 @@ composer require afzalsabbir/slug-generator
         // ...
     }
     ```
-
-```php
-```
+- You can also use the `generateSlug(Model $model)` helper method to generate a slug.
+    ```php
+    use AfzalSabbir\SlugGenerator\SlugGenerator;
+    use App\Models\Post;
+    // ...
+    
+    $post = Post::find(1);
+    $post->title = "Hello World";
+    $post->slug = generateSlug($post);
+    $post->save();
+    ```
 
 ## Testing
 
