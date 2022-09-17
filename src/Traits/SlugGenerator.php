@@ -20,13 +20,13 @@ trait SlugGenerator
     public static function bootSlugGenerator(): void
     {
         static::creating(function ($model) {
-            if ($model->slug['set-on-create'] ?? config("sluggenerator.set-on-create")) {
+            if ($model->slugGenerator['set-on-create'] ?? config("sluggenerator.set-on-create")) {
                 $model->handle($model);
             }
         });
 
         static::updating(function ($model) {
-            if ($model->slug['set-on-update'] ?? config("sluggenerator.set-on-update")) {
+            if ($model->slugGenerator['set-on-update'] ?? config("sluggenerator.set-on-update")) {
                 $model->handle($model);
             }
         });
@@ -36,19 +36,19 @@ trait SlugGenerator
      * Handle the slug generation.
      *
      * @param Model $model
-     * @return void
+     * @return string
      */
-    public function handle(Model $model): void
+    public function handle(Model $model): string
     {
         try {
-            $targetField = $model->slug['target-field'] ?? config("sluggenerator.target-field");
-            $separator   = $model->slug['separator'] ?? config("sluggenerator.separator");
-            $slugField   = $model->slug['slug-field'] ?? config("sluggenerator.slug-field");
+            $targetField = $model->slugGenerator['target-field'] ?? config("sluggenerator.target-field");
+            $separator   = $model->slugGenerator['separator'] ?? config("sluggenerator.separator");
+            $slugField   = $model->slugGenerator['slug-field'] ?? config("sluggenerator.slug-field");
 
-            $model->generateSlug(null, $slugField, $targetField, $separator);
+            return $model->generateSlug(null, $slugField, $targetField, $separator);
         }
         catch (\Exception $e) {
-            return;
+            return $e->getMessage();
         }
     }
 
