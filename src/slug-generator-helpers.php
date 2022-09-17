@@ -1,6 +1,6 @@
 <?php
 
-use Afzalsabbir\SlugGenerator\Traits\SlugGenerator;
+use AfzalSabbir\SlugGenerator\Traits\SlugGenerator;
 use Illuminate\Database\Eloquent\Model;
 
 if (!function_exists('generateSlug')) {
