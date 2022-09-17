@@ -1,6 +1,6 @@
 {
     "name": "afzalsabbir/slug-generator",
-    "description": "Your Package Description here",
+    "description": "A simple package to generate slug from string for Laravel",
     "type": "library",
     "license": "MIT",
     "keywords": [
