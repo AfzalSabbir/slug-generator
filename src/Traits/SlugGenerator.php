@@ -36,19 +36,19 @@ trait SlugGenerator
      * Handle the slug generation.
      *
      * @param Model $model
-     * @return void
+     * @return string
      */
-    public function handle(Model $model): void
+    public function handle(Model $model): string
     {
         try {
             $targetField = $model->slug['target-field'] ?? config("sluggenerator.target-field");
             $separator   = $model->slug['separator'] ?? config("sluggenerator.separator");
             $slugField   = $model->slug['slug-field'] ?? config("sluggenerator.slug-field");
 
-            $model->generateSlug(null, $slugField, $targetField, $separator);
+            return $model->generateSlug(null, $slugField, $targetField, $separator);
         }
         catch (\Exception $e) {
-            return;
+            return $e->getMessage();
         }
     }
 
