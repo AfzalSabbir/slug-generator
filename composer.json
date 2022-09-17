@@ -31,7 +31,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Afzalsabbir\\SlugGenerator\\": "src/"
+            "AfzalSabbir\\SlugGenerator\\": "src/"
         },
         "files": [
             "src/slug-generator-helpers.php"
@@ -39,7 +39,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Afzalsabbir\\SlugGenerator\\Tests\\":"tests/"
+            "AfzalSabbir\\SlugGenerator\\Tests\\":"tests/"
         }
     },
     "config": {
@@ -53,10 +53,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Afzalsabbir\\SlugGenerator\\SlugGeneratorServiceProvider"
+                "AfzalSabbir\\SlugGenerator\\SlugGeneratorServiceProvider"
             ],
             "aliases": {
-                "Afzalsabbir": "Afzalsabbir\\SlugGenerator\\SlugGeneratorFacade"
+                "SlugGenerator": "AfzalSabbir\\SlugGenerator\\SlugGeneratorFacade"
             }
         }
     }

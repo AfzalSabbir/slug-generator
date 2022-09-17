@@ -13,6 +13,6 @@ class SlugGeneratorFacade extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'slug-generator';
+        return 'SlugGenerator';
     }
 }
